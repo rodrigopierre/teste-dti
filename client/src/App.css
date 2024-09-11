@@ -1,1 +1,4 @@
-
+.app-screen {
+  display: flex;
+  flex-direction: column;
+}

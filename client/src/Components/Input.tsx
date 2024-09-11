@@ -1,10 +1,10 @@
-import './Input.css'
+import './Style/Input.css'
 
 
 interface InputProps {
     title: string;
     placeholder: string;
-  }
+}
 
 const Input: React.FC<InputProps> = ({ title, placeholder }) => {
 
