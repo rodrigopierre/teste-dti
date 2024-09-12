@@ -2,7 +2,6 @@ import { useState } from 'react'
 import './App.css'
 import Input from './Components/Input'
 import List from './Components/List'
-import { listDays } from './Data/dates'
 
 function App() {
 
@@ -82,7 +81,7 @@ function App() {
 
       <div className='bottom-screen'>
         <h1>Lista de lembretes</h1>
-        <List dates={listDays}/>
+        <List />
       </div>
     </div>
   )
