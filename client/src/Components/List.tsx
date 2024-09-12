@@ -32,7 +32,7 @@ const List = () => {
   return (
     <div className="list-container">
       {dates.map((date) => (
-        <Day key={date} date={date} />
+        <Day date={date} />
       ))}
     </div>
   );
