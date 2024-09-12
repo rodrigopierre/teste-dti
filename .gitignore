@@ -1,0 +1,2 @@
+# Ignorar o arquivo do banco de dados SQLite
+api/src/data/database.sqlite
