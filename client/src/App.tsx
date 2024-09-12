@@ -8,7 +8,6 @@ function App() {
 
   const [error, setError] = useState("");
 
-
   function validateInput() {
     const dateInput = document.getElementById("Data") as HTMLInputElement;
     const date = dateInput.value;
@@ -44,21 +43,26 @@ function App() {
     if (inputDate < currentDate) {
       return "A data deve estar no futuro";
     }
+
     if (month < 1 || month > 12) {
       return "O mês deve ser válido";
     }
+
     if (day < 1 || day > 31) {
       return "O dia deve ser válido";
     }
+
     if (month === 2 && day > 29) {
       return "Fevereiro tem no máximo 29 dias";
     }
+
     if (
       (month === 4 || month === 6 || month === 9 || month === 11) &&
       day > 30
     ) {
       return "O mês selecionado tem no máximo 30 dias";
     }
+    
     return "";
   };
 
