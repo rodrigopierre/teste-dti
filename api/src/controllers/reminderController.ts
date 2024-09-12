@@ -47,15 +47,35 @@ export const deleteReminder = async (req: Request, res: Response) => {
 };
 
 
-// Função para obter todas as datas únicas
+// Obter todas as datas únicas
 export const getUniqueDates = async (req: Request, res: Response) => {
     try {
-        // Buscar todas as datas únicas
         const uniqueDates = await db('reminders').distinct('date');
 
-        // Retornar as datas
         res.status(200).json(uniqueDates);
     } catch (error) {
         res.status(500).json({ error: 'Erro ao obter as datas únicas.' });
+    }
+};
+
+
+// Obter todos os lembretes de uma data específica
+export const getRemindersByDatePost = async (req: Request, res: Response) => {
+    const { date } = req.body;
+
+    if (!date) {
+        return res.status(400).json({ error: 'Data é obrigatória.' });
+    }
+
+    try {
+        const reminders = await db('reminders').where({ date: date });
+
+        if (reminders.length === 0) {
+            return res.status(404).json({ error: 'Nenhum lembrete encontrado para essa data.' });
+        }
+
+        res.status(200).json(reminders);
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao buscar os lembretes para a data fornecida.' });
     }
 };
