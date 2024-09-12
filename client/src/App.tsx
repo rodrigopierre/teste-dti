@@ -8,6 +8,63 @@ function App() {
 
   const [error, setError] = useState("");
 
+
+  function validateInput() {
+    const dateInput = document.getElementById("Data") as HTMLInputElement;
+    const date = dateInput.value;
+    const nameInput = document.getElementById("Nome") as HTMLInputElement;
+    const name = nameInput.value;
+
+    if (name == '' || date == '') {
+      setError("Você deve preencher todos os campos!");
+      if (date == '') {
+        dateInput.style.border = 'red 2px solid';
+      }
+      if (name == '') {
+        nameInput.style.border = 'red 2px solid';
+      }
+      return
+    }
+
+    if (validateDate(date) != '') {
+      setError(validateDate(date));
+      dateInput.style.border = 'red 2px solid';
+      return
+    }
+    
+  }
+
+
+  function validateDate(date: string) {
+    const [day, month, year] = date.split("/").map(Number);
+    const currentDate = new Date();
+    const inputDate = new Date(year, month - 1, day);
+  
+    if (inputDate > currentDate) {
+      return "A data não pode ser no futuro";
+    }
+    if(year < 1908){
+      return "Ano inválido";
+    }
+    if (month < 1 || month > 12) {
+      return "Mês inválido";
+    }
+    if (day < 1 || day > 31) {
+      return "Dia inválido";
+    }
+    if (month === 2 && day > 29) {
+      return "Fevereiro tem no máximo 29 dias";
+    }
+    if (
+      (month === 4 || month === 6 || month === 9 || month === 11) &&
+      day > 30
+    ) {
+      return "O mês selecionado tem no máximo 30 dias";
+    }
+    return "";
+  };
+
+
   return (
     <div className='app-screen'>
 
@@ -17,7 +74,7 @@ function App() {
         <Input title="Data" placeholder="Data do lembrete (no formato dd/mm/yyyy)" />
         <p className='error'>{error}</p>
         <div className='btn-container'>
-          <button className='send-btn' onClick={() => setError("Erro aqui!")}>Criar</button>
+          <button className='send-btn' onClick={() => validateInput()}>Criar</button>
         </div>
       </div>
 
