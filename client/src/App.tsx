@@ -1,9 +1,12 @@
+import { useState } from 'react'
 import './App.css'
 import Input from './Components/Input'
 import List from './Components/List'
 import { listDays } from './Data/dates'
 
 function App() {
+
+  const [error, setError] = useState("");
 
   return (
     <div className='app-screen'>
@@ -12,8 +15,9 @@ function App() {
         <h1>Novo Lembrete</h1>
         <Input title="Nome" placeholder="Nome do lembrete" />
         <Input title="Data" placeholder="Data do lembrete (no formato dd/mm/yyyy)" />
+        <p className='error'>{error}</p>
         <div className='btn-container'>
-          <button className='send-btn'>Criar</button>
+          <button className='send-btn' onClick={() => setError("Erro aqui!")}>Criar</button>
         </div>
       </div>
 
