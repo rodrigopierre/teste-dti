@@ -1,11 +1,11 @@
-.lembrete-container {
+.reminder-container {
     display: flex;
     margin-left: 40px; 
     margin-top: 0;
     align-items: center;
 }
 
-.lembrete-container p {
+.reminder-container p {
     font-size: 1.4rem;
     margin: 0;
     margin-right: 8px;

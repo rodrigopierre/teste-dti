@@ -1,4 +1,4 @@
-import Lembrete from './Lembrete';
+import Reminder from './Reminder';
 import './Style/Day.css'
 
 
@@ -12,9 +12,9 @@ const Day: React.FC<DayProps> = ({ date }) => {
   return (
     <div className='day-container'>
         <h2>{date}</h2>
-          <Lembrete />
-          <Lembrete />
-          <Lembrete />
+          <Reminder />
+          <Reminder />
+          <Reminder />
     </div>
 
   )
