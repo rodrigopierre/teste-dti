@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import db from '../db';
 
+
 // Obter todos os lembretes
 export const getReminders = async (req: Request, res: Response) => {
     try {
@@ -10,6 +11,7 @@ export const getReminders = async (req: Request, res: Response) => {
         res.status(500).json({ error: 'Erro ao obter os lembretes.' });
     }
 };
+
 
 // Criar um novo lembrete
 export const createReminder = async (req: Request, res: Response) => {
@@ -21,6 +23,7 @@ export const createReminder = async (req: Request, res: Response) => {
         res.status(500).json({ error: 'Erro ao criar o lembrete.' });
     }
 };
+
 
 // Deletar um lembrete
 export const deleteReminder = async (req: Request, res: Response) => {
@@ -40,5 +43,19 @@ export const deleteReminder = async (req: Request, res: Response) => {
         }
     } catch (error) {
         res.status(500).json({ error: 'Erro ao deletar o lembrete.' });
+    }
+};
+
+
+// Função para obter todas as datas únicas
+export const getUniqueDates = async (req: Request, res: Response) => {
+    try {
+        // Buscar todas as datas únicas
+        const uniqueDates = await db('reminders').distinct('date');
+
+        // Retornar as datas
+        res.status(200).json(uniqueDates);
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao obter as datas únicas.' });
     }
 };

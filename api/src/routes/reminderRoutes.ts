@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getReminders, createReminder, deleteReminder } from '../controllers/reminderController';
+import { getReminders, createReminder, deleteReminder, getUniqueDates } from '../controllers/reminderController';
 
 const router = Router();
 
@@ -11,5 +11,8 @@ router.post('/reminders', createReminder);
 
 // Rota para deletar um lembrete
 router.delete('/reminders/:id', deleteReminder);
+
+// Rota para obter todas as datas únicas
+router.get('/reminders/dates', getUniqueDates);
 
 export default router;
