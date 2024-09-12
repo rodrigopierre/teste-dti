@@ -1,19 +1,15 @@
 import { Request, Response } from 'express';
+import db from '../db';
 
-let reminders = [
-    { id: 1, date: "01/01/2025", name: 'Reminder 1' },
-    { id: 2, date: "12/12/2024", name: 'Reminder 2' }
-];
-
-// Função para obter lembretes
-export const getReminders = (req: Request, res: Response) => {
+// Obter todos os lembretes
+export const getReminders = async (req: Request, res: Response) => {
+    const reminders = await db('reminders').select('*');
     res.json(reminders);
 };
 
-// Função para adicionar um lembrete
-export const createReminder = (req: Request, res: Response) => {
+// Criar um novo lembrete
+export const createReminder = async (req: Request, res: Response) => {
     const { date, name } = req.body;
-    const newReminder = { id: reminders.length + 1, date, name };
-    reminders.push(newReminder);
-    res.status(201).json(newReminder);
+    const [id] = await db('reminders').insert({ date, name });
+    res.status(201).json({ id, date, name });
 };
