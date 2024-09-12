@@ -31,7 +31,8 @@ function App() {
       dateInput.style.border = 'red 2px solid';
       return
     }
-    
+
+    setError("");
   }
 
 
@@ -40,17 +41,14 @@ function App() {
     const currentDate = new Date();
     const inputDate = new Date(year, month - 1, day);
   
-    if (inputDate > currentDate) {
-      return "A data não pode ser no futuro";
-    }
-    if(year < 1908){
-      return "Ano inválido";
+    if (inputDate < currentDate) {
+      return "A data deve estar no futuro";
     }
     if (month < 1 || month > 12) {
-      return "Mês inválido";
+      return "O mês deve ser válido";
     }
     if (day < 1 || day > 31) {
-      return "Dia inválido";
+      return "O dia deve ser válido";
     }
     if (month === 2 && day > 29) {
       return "Fevereiro tem no máximo 29 dias";
