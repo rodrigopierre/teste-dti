@@ -1,9 +1,16 @@
 import './Style/Reminder.css'
 
-const Reminder = () => {
+
+interface ReminderProps {
+  title: string;
+  id: number;
+}
+
+
+const Reminder: React.FC<ReminderProps> = ({ title, id }) => {
   return (
     <div className='reminder-container'>
-        <p>Exemplo de lembrete</p>
+        <p>{title}</p>
         <button className="delete-btn">x</button>
     </div>
   )
