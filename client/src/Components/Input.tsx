@@ -10,11 +10,11 @@ const Input: React.FC<InputProps> = ({ title, placeholder }) => {
 
 
   return (
-    <div className="Input-container">
-        <div className="Input-left">
+    <div className="input-container">
+        <div className="input-left">
             <h2>{title}</h2>
         </div>
-        <input className="Input-right" placeholder={placeholder}/>
+        <input className="input-right" placeholder={placeholder}/>
     </div>
   )
 }

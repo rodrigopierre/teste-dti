@@ -9,9 +9,12 @@ function App() {
     <div className='app-screen'>
 
       <div className='top-screen'>
+        <h1>Novo Lembrete</h1>
         <Input title="Nome" placeholder="Nome do lembrete" />
         <Input title="Data" placeholder="Data do lembrete (no formato dd/mm/yyyy)" />
-        <button className='send-btn'>Criar</button>
+        <div className='btn-container'>
+          <button className='send-btn'>Criar</button>
+        </div>
       </div>
 
       <div className='bottom-screen'>
