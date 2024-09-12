@@ -18,6 +18,7 @@ function App() {
       </div>
 
       <div className='bottom-screen'>
+        <h1>Lista de lembretes</h1>
         <List dates={listDays}/>
       </div>
     </div>

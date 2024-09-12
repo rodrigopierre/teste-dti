@@ -1,0 +1,26 @@
+.lembrete-container {
+    display: flex;
+    margin-left: 40px; 
+    margin-top: 0;
+    align-items: center;
+}
+
+.lembrete-container p {
+    font-size: 1.4rem;
+    margin: 0;
+    margin-right: 8px;
+    margin-bottom: 2px;
+}
+
+.delete-btn {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: red;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}

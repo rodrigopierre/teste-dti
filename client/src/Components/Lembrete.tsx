@@ -1,10 +1,10 @@
-
+import './Style/Lembrete.css'
 
 const Lembrete = () => {
   return (
-    <div>
+    <div className='lembrete-container'>
         <p>Exemplo de lembrete</p>
-        <button className="delete">x</button>
+        <button className="delete-btn">x</button>
     </div>
   )
 }

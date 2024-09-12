@@ -2,7 +2,6 @@
     display: flex;
     width: 100%;
     max-width: 700px;
-    border: 1px solid rgb(211, 211, 211);
     margin-top: 15px;
     height: 40px;
     border-radius: 10px;
@@ -14,6 +13,7 @@
     background-color: #ececec;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    border: 1px solid rgb(211, 211, 211);
 }
 .input-left h2 {
     color: #696969;
@@ -27,4 +27,6 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     padding-left: 15px;
+    font-size: 1.4rem;
+    border: 1px solid rgb(211, 211, 211);
 }
