@@ -11,6 +11,18 @@ interface Dates {
 
 const List = () => {
 
+  function sortDates(datesArray: string[]): string[] {
+    return datesArray.sort((a: string, b: string) => {
+      const [diaA, mesA, anoA] = a.split('/');
+      const [diaB, mesB, anoB] = b.split('/');
+  
+      const dataA = new Date(`${anoA}-${mesA}-${diaA}`);
+      const dataB = new Date(`${anoB}-${mesB}-${diaB}`);
+  
+      return dataA.getTime() - dataB.getTime();
+    });
+  }
+
     const [dates, setDates] = useState<string[]>([]);
 
     useEffect(() => {
@@ -19,7 +31,7 @@ const List = () => {
             const response: AxiosResponse<Dates[]> = await api.get('/reminders/dates');
             
             const datesArray = response.data.map((item: Dates) => item.date);
-            setDates(datesArray);
+            setDates(sortDates(datesArray));
         } catch (error) {
             console.error('Erro ao buscar as datas:', error);
         }
