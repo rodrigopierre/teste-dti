@@ -1,26 +1,19 @@
 .reminder-container {
     display: flex;
     margin-left: 40px; 
-    margin-top: 0;
+    margin-top: 2px;
     align-items: center;
+    margin-bottom: 5px;
 }
 
 .reminder-container p {
     font-size: 1.4rem;
     margin: 0;
     margin-right: 8px;
-    margin-bottom: 2px;
 }
 
-.delete-btn {
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    border: none;
-    color: white;
-    background-color: red;
-    font-size: 0.7rem;
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
+.material-symbols-outlined {
+  color: red; 
+  cursor: pointer;
+  font-size: 1.6rem;
 }

@@ -22,7 +22,9 @@ const Reminder: React.FC<ReminderProps> = ({ title, id }) => {
   return (
     <div className='reminder-container'>
         <p>{title}</p>
-        <button className="delete-btn" onClick={() => deleteClick()}>X</button>
+        <span className="material-symbols-outlined" onClick={() => deleteClick()}>
+          cancel
+        </span>
     </div>
   )
 }
