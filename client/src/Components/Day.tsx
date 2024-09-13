@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Reminder from './Reminder';
 import './Style/Day.css'
 import { api } from '../Services/api';
@@ -19,7 +19,7 @@ const Day: React.FC<DayProps> = ({ date }) => {
 
   const [reminders, setReminders] = useState<Reminder[]>([]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const fetchRemindersByDate = async () => {
 
       try {
@@ -31,7 +31,7 @@ const Day: React.FC<DayProps> = ({ date }) => {
     };
 
     fetchRemindersByDate();
-  });
+  }, []);
 
   return (
     <div className='day-container'>
