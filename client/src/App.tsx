@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Input from './Components/Input'
 import List from './Components/List'
+import { api } from './Services/api';
 
 function App() {
 
@@ -31,6 +32,15 @@ function App() {
     }
 
     setError("");
+
+    api.post('/reminders', {
+      date,
+      name
+    })
+    .then((response) => console.log(response))
+    .catch((error) => console.log(error));
+
+    window.location.reload();
   }
 
 

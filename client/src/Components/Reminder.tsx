@@ -14,6 +14,8 @@ const Reminder: React.FC<ReminderProps> = ({ title, id }) => {
     api.delete(`/reminders/${id}`)
     .then((response) => console.log(response))
     .catch((error) => console.log(error));
+
+    window.location.reload();
   }
 
 
