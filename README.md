@@ -19,13 +19,13 @@ Consiste em um site simples para organizar lembretes.
   - Clonar esse repositório
   - Abrir a pasta raiz deste projeto
   - Rodar os seguintes comandos para inicializar o back-end:
-        - cd api
-        - npm i
-        - npm start
+cd api 
+npm i
+npm start
   - Depois abrir um outro terminal na pasta raiz do projeto
   - Rodar os seguintes comandos para inicializar o front-end:
-        - cd client
-        - npm i
-        - npm run dev
+cd client
+npm i
+npm run dev
   - Clicar no link que aparecer (localhost porta 5173)
   - Assim o programa deve funcionar, qualquer problema só entrar em contato comigo 😃
