@@ -27,5 +27,5 @@ Apesar de o design proposto ser apenas ilustrativo e simples, eu preferi ser rel
   - cd client
   - npm i
   - npm run dev
-- Clicar no link que aparecer (localhost porta 5173)
+- Clicar no link que aparecer (localhost porta 5173, se direcionar para outra preciso que você acesse o arquivo api/src/server.ts e altere a permissão do CORS para a porta desejada)
 - Assim o programa deve funcionar, qualquer problema só entrar em contato comigo 😃

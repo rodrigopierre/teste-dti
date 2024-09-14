@@ -8,6 +8,7 @@ const port = 3000;
 
 app.use(express.json());
 
+// Altere aqui caso a sua porta seja outra:
 app.use(cors({
     origin: 'http://localhost:5173',
 }));
