@@ -11,6 +11,7 @@
     margin: 0;
     margin-right: 8px;
     line-height: 15px;
+    overflow: hidden;
 }
 
 .material-symbols-outlined {
