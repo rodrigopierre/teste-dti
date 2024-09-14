@@ -11,7 +11,7 @@ interface Dates {
 
 const List = () => {
 
-  function sortDates(datesArray: string[]): string[] {
+  function sortDates(datesArray: string[]): string[] {      // Ordena as datas cronologicamente
     return datesArray.sort((a: string, b: string) => {
       const [diaA, mesA, anoA] = a.split('/');
       const [diaB, mesB, anoB] = b.split('/');
@@ -26,7 +26,7 @@ const List = () => {
     const [dates, setDates] = useState<string[]>([]);
 
     useEffect(() => {
-      const fetchDates = async () => {
+      const fetchDates = async () => {        // Busca as datas que possuem lembretes
         try {
             const response: AxiosResponse<Dates[]> = await api.get('/reminders/dates');
             
@@ -43,7 +43,7 @@ const List = () => {
 
   return (
     <div className="list-container">
-      {dates.map((date) => (
+      {dates.map((date) => (        // Renderiza todas as datas que possuem lembretes
         <Day date={date} />
       ))}
     </div>

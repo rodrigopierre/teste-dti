@@ -2,6 +2,7 @@ import { createReminder } from '../controllers/reminderController';
 import { Request, Response } from 'express';
 import db from '../db';
 
+// Testes da função de criar lembrete
 
 jest.mock('../db', () => jest.fn());
 

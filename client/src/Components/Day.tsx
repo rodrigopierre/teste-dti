@@ -20,8 +20,7 @@ const Day: React.FC<DayProps> = ({ date }) => {
   const [reminders, setReminders] = useState<Reminder[]>([]);
 
   useEffect(() => {
-    const fetchRemindersByDate = async () => {
-
+    const fetchRemindersByDate = async () => {        // Busca os lembretes referente a uma data específica
       try {
           const response = await api.post<Reminder[]>('/reminders/date', { date });
           setReminders(response.data);
@@ -36,7 +35,7 @@ const Day: React.FC<DayProps> = ({ date }) => {
   return (
     <div className='day-container'>
         <h2>{date}</h2>
-        {reminders.map((reminder) => (
+        {reminders.map((reminder) => (                        // renderiza todos os lembretes dessa data
           <Reminder title={reminder.name} id={reminder.id} />
         ))}
     </div>

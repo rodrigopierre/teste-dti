@@ -12,14 +12,14 @@ const Input: React.FC<InputProps> = ({ title, placeholder }) => {
   const [date, setDate] = useState("");
 
 
-  const formatDate = (value: string) => {
+  const formatDate = (value: string) => {      // transforma a data para o formato exigido
     return value
       .replace(/\D/g, "")
       .replace(/(\d{2})(\d)/, "$1/$2")
       .replace(/(\d{2})(\d{4})$/, "$1/$2");
 };
 
-  function borderReturn(id: string) {
+  function borderReturn(id: string) {         // tira a borda vermelha de erro dos inputs ao alterar os campos
     const input = document.getElementById(id) as HTMLInputElement;
     input.style.border = 'rgb(211, 211, 211) 1px solid';
   }

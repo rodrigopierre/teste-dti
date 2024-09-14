@@ -13,7 +13,7 @@ const Reminder: React.FC<ReminderProps> = ({ title, id }) => {
 
   const [modal, setModal] = useState(false);
 
-  function deleteClick() {
+  function deleteClick() {          // deleta o lembrete ao clicar no botão de excluir
     setModal(false);
 
     api.delete(`/reminders/${id}`)
@@ -31,7 +31,7 @@ const Reminder: React.FC<ReminderProps> = ({ title, id }) => {
           cancel
         </span>
 
-        {modal &&
+        {modal &&                             // renderização condicional do modal de exclusão de um lembrete
         <div className='modal-background'>
           <div className='delete-modal'>
             <h1>Tem certeza que deseja excluir esse lembrete?</h1>

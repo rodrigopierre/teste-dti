@@ -2,6 +2,7 @@ import { getUniqueDates } from '../controllers/reminderController';
 import { Request, Response } from 'express';
 import db from '../db';
 
+// Testes da função de pegar todas as datas únicas
 
 jest.mock('../db', () => jest.fn());
 

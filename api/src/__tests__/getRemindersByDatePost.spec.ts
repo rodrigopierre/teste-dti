@@ -2,6 +2,7 @@ import { getRemindersByDatePost } from '../controllers/reminderController';
 import { Request, Response } from 'express';
 import db from '../db';
 
+// Testes da função de pegar todos os lembretes de uma data específica
 
 jest.mock('../db', () => jest.fn());
 

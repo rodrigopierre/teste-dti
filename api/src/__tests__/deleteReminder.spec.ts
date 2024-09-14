@@ -2,6 +2,7 @@ import { deleteReminder } from '../controllers/reminderController';
 import { Request, Response } from 'express';
 import db from '../db';
 
+// Testes da função de deletar lembrete
 
 jest.mock('../db', () => jest.fn());
 

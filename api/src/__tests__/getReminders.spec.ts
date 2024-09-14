@@ -2,6 +2,7 @@ import { getReminders } from '../controllers/reminderController';
 import { Request, Response } from 'express';
 import db from '../db';
 
+// Testes da função de pegar todos os lembretes
 
 jest.mock('../db', () => jest.fn());
 

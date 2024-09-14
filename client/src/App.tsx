@@ -4,11 +4,11 @@ import Input from './Components/Input'
 import List from './Components/List'
 import { api } from './Services/api';
 
-function App() {
+function App() {      // Tela única do projeto
 
   const [error, setError] = useState("");
 
-  function validateInput() {
+  function validateInput() {       // Valida os campos de criação de lembrete
     const dateInput = document.getElementById("Data") as HTMLInputElement;
     const date = dateInput.value;
     const nameInput = document.getElementById("Nome") as HTMLInputElement;
@@ -33,7 +33,7 @@ function App() {
 
     setError("");
 
-    api.post('/reminders', {
+    api.post('/reminders', {               // Comunica a criação do lembrete com o servidor
       date,
       name
     })
@@ -44,7 +44,7 @@ function App() {
   }
 
 
-  function validateDate(date: string) {
+  function validateDate(date: string) {       // Testa se a data é válida
     const [day, month, year] = date.split("/").map(Number);
     const currentDate = new Date();
     const inputDate = new Date(year, month - 1, day);

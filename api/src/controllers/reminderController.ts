@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import db from '../db';
 
 
-// Obter todos os lembretes
+// Retorna todos os lembretes
 export const getReminders = async (req: Request, res: Response) => {
     try {
         const reminders = await db('reminders').select('*');
@@ -13,7 +13,7 @@ export const getReminders = async (req: Request, res: Response) => {
 };
 
 
-// Criar um novo lembrete
+// Cria um novo lembrete
 export const createReminder = async (req: Request, res: Response) => {
     const { date, name } = req.body;
     try {
@@ -25,7 +25,7 @@ export const createReminder = async (req: Request, res: Response) => {
 };
 
 
-// Deletar um lembrete
+// Deleta um lembrete pelo id
 export const deleteReminder = async (req: Request, res: Response) => {
     const id = parseInt(req.params.id, 10); 
 
@@ -47,7 +47,7 @@ export const deleteReminder = async (req: Request, res: Response) => {
 };
 
 
-// Obter todas as datas únicas
+// Retorna todas as datas únicas
 export const getUniqueDates = async (req: Request, res: Response) => {
     try {
         const uniqueDates = await db('reminders').distinct('date');
@@ -59,7 +59,7 @@ export const getUniqueDates = async (req: Request, res: Response) => {
 };
 
 
-// Obter todos os lembretes de uma data específica
+// Retorna todos os lembretes de uma data específica
 export const getRemindersByDatePost = async (req: Request, res: Response) => {
     const { date } = req.body;
 
