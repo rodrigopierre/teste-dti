@@ -7,7 +7,7 @@ jest.mock('../db', () => jest.fn());
 
 describe('getReminders', () => {
   it('should return a list of reminders', async () => {
-    const mockReminders = [{ id: 1, date: '2024/09/10', name: 'Lembrete 1' }];
+    const mockReminders = [{ id: 1, date: '14/09/2024', name: 'Lembrete 1' }];
     (db as unknown as jest.Mock).mockImplementation(() => ({
       select: jest.fn().mockResolvedValue(mockReminders),
     }));
@@ -24,7 +24,7 @@ describe('getReminders', () => {
     expect(res.status).not.toHaveBeenCalled();
   });
 
-  //teste de erro
+  
   it('should handle errors', async () => {
     (db as unknown as jest.Mock).mockImplementation(() => ({
       select: jest.fn().mockRejectedValue(new Error('Erro')),
