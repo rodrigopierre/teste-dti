@@ -3,12 +3,12 @@ Repositório privado para o projeto do processo seletivo da Dti Digital.
 Consiste em um site simples para organizar lembretes.
 
 #Back-end: 
-- Feito em typescript porque é a linguagem que tenho mais familiaridade.
+- Feito em Typescript (com Express).
 - Utilizei o Sqlite pela facilidade de rodar sem a necessidade de um container Docker.
 - Testes unitários com Jest.
   
 #Front-end:
-- Feito em React (com typescript).
+- Feito em React (com Typescript).
 - Fiz direto na App.tsx por ser a única tela do projeto.
 - Utilizei o Axios para requisições.
 - Testes unitários com Jest e Testing Library.
